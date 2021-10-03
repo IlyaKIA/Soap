@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rest-online-store
+    username: postgres
+    password: postgrespass
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
