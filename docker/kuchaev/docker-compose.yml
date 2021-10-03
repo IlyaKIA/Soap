@@ -1,0 +1,22 @@
+version: '3.8'
+
+volumes:
+  rest-online-store-db:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:9.6
+    container_name: rest-online-store-db
+    volumes:
+      - type: volume
+        source: rest-online-store-db
+        target: /var/lib/postgresql/dataConfig
+    environment:
+      POSTGRES_DB: rest-online-store
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass
+    ports:
+      - "5432:5432"
+
+# jdbc:postgresql://localhost:5432/simple-app
